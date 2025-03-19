@@ -7,15 +7,15 @@
 <div x-data="{
         images: [
             '/images/backgroundpic.jpg',
-            '/images/backgroundpic2.jpg',
-            '/images/backgroundpic3.jpg'
+            '/images/backgroundpic2.jpeg',
+            '/images/backgroundpic3.jpeg'
         ],
         currentIndex: 0,
         transitioning: false,
         startSlideshow() {
             setInterval(() => {
                 this.nextImage();
-            }, 3000); // Change image every 3 seconds
+            }, 3500); // Change image every 3.5 seconds
         },
         nextImage() {
             if (this.transitioning) return;
