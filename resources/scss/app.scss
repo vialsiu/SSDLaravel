@@ -20,16 +20,53 @@ body {
 
 /* 🖼 NAVIGATION BAR */
 nav {
-    background: rgba(20, 20, 20, 0.9);
-    color: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
     width: 100%;
+    top: 0;
+    left: 0;
     z-index: 1000;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+
+    .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+
+        li a {
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            color: #333;
+            transition: color 0.3s ease-in-out;
+
+            &:hover {
+                color: #c0392b;
+            }
+        }
+    }
 }
 
 /* 🎨 HERO SECTION */
@@ -42,20 +79,23 @@ nav {
     text-align: center;
     color: white;
     position: relative;
-}
 
-.hero-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-}
+    .hero-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+    }
 
-.hero-content h1 {
-    font-size: 4rem;
-    font-family: 'Playfair Display', serif;
-    font-weight: bold;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    .hero-content {
+        z-index: 1;
+        h1 {
+            font-size: 4rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+    }
 }
 
 /* 🖼 ARTWORK GRID */
@@ -78,6 +118,30 @@ footer {
 
 /* 📱 RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .nav-logo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-section {
+        height: 70vh;
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+        }
+    }
+
     .artwork-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
