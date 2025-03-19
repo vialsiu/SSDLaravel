@@ -4,7 +4,7 @@
         <!-- Logo on the Left -->
         <div class="flex items-center space-x-3 nav-logo">
             <img src="<?php echo e(asset('/images/statue.png')); ?>" alt="Logo" class="h-10 w-auto">
-            <h1 class="text-gray-900">Viva il Painted Voyage</h1>
+            <h1 class="text-gray-900" style="color: #d3a4a4;">Viva il Painted Voyage</h1>
         </div>
 
         <!-- Navigation Links -->
