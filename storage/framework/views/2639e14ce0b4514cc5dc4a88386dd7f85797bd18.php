@@ -1,14 +1,14 @@
 
 
-<?php $__env->startSection('title', 'Home - Paint Across The World'); ?>
+<?php $__env->startSection('title', 'Viva il Painted Voyage - Home'); ?>
 
 <?php $__env->startSection('content'); ?>
 <!-- Hero Section with Smooth Slide-Up Background Transition -->
 <div x-data="{
         images: [
-            '/images/backgroundpic.jpg',
+            '/images/backgroundpic.jpeg',
             '/images/backgroundpic2.jpeg',
-            '/images/backgroundpic3.jpeg'
+            '/images/backgroundpic3.jpg'
         ],
         currentIndex: 0,
         transitioning: false,
@@ -60,7 +60,7 @@
         </h1>
 
         <!-- Bottom Call-to-Action -->
-        <a href="#" class="text-lg md:text-2xl font-sans mt-4 underline hover:opacity-80 transition-opacity">
+        <a  href="<?php echo e(route('blog.index')); ?>" class="text-lg md:text-2xl font-sans mt-4 underline hover:opacity-80 transition-opacity">
             New exhibitions - latest blogs
         </a>
     </div>
