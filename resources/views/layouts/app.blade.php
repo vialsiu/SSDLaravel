@@ -15,6 +15,8 @@
     <div class="container mx-auto py-10">
         @yield('content')
     </div>
+    
+    @include('partials.explore')
 
     @include('partials.footer')
 
