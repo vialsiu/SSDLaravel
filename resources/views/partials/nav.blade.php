@@ -1,10 +1,28 @@
-<nav class="p-4 shadow-md bg-white">
-    <div class="container mx-auto flex justify-between items-center">
-        <h1 class="text-2xl font-bold text-primary">Viva il Painted Voyage</h1>
-        <ul class="flex space-x-4">
-            <li><a href="{{ route('home') }}" class="text-gray-700 hover:text-primary">Home</a></li>
-            <li><a href="{{ route('blog.index') }}" class="text-gray-700 hover:text-primary">Blog</a></li>
-            <li><a href="{{ route('contact') }}" class="text-gray-700 hover:text-primary">Contact</a></li>
+<nav class="bg-white py-3">
+    <div class="container mx-auto flex items-center justify-between max-w-6xl px-4 lg:px-8">
+        
+        <!-- Logo on the Left -->
+        <div class="flex items-center space-x-3 nav-logo">
+            <img src="{{ asset('/images/statue.png') }}" alt="Logo" class="h-10 w-auto">
+            <h1 class="text-gray-900">Viva il Painted Voyage</h1>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="flex space-x-6 text-lg font-medium">
+            <li><a href="{{ route('home') }}" class="text-gray-700 hover:text-black transition">Home</a></li>
+            <li><a href="{{ route('blog.index') }}" class="text-gray-700 hover:text-black transition">Blogs</a></li>
+            <li><a href="{{ route('blog.index') }}" class="text-gray-700 hover:text-black transition">Artists</a></li>
+            <li><a href="{{ route('contact') }}" class="text-gray-700 hover:text-black transition">Galleries</a></li>
+            <li><a href="#" class="text-gray-700 hover:text-black transition">Log in</a></li>
         </ul>
+
+        <!-- Search Icon -->
+        <div>
+            <a href="#" class="text-gray-700 hover:text-black transition">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m1.8-5.4a7.5 7.5 0 11-15 0 7.5 7.5 0 0115 0z" />
+                </svg>
+            </a>
+        </div>
     </div>
 </nav>

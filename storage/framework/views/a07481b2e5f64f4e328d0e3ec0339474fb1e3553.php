@@ -11,9 +11,9 @@
             <p class="text-gray-500">RCN: 12345678</p>
         </div>
 
-        <!-- Opening Hours -->
+        <!-- Contact Hours -->
         <div>
-            <h3 class="font-bold text-lg">Opening Hours</h3>
+            <h3 class="font-bold text-lg">Contact Hours</h3>
             <p>Monday: 11:00 – 17:30</p>
             <p>Tuesday - Wednesday: 9:15 – 17:30</p>
             <p>Thursday: 9:15 – 20:30</p>

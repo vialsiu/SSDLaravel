@@ -2,7 +2,7 @@
     <div class="container mx-auto flex justify-between items-center">
         <!-- Placeholder for logo -->
         <div class="flex items-center space-x-3">
-            <img src="{{ asset('./images/statue.png') }}" alt="Logo" class="h-10 w-10">
+            <img src="{{ asset('images/statue.png') }}" alt="Logo" class="h-10 w-10">
             <h1 class="text-2xl font-bold text-gray-900">Viva il Painted Voyage</h1>
         </div>
         <!-- Navigation Links -->
