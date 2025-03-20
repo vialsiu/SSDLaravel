@@ -45,25 +45,31 @@ class PostsController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' => 'required|mimes:jpg,png,jpeg|max:5048'
+            'image' => 'required|mimes:jpg,png,jpeg|max:5048',
+            'artist' => 'required|string',
+            'medium' => 'required|string',
+            'origin' => 'required|string',
+            'year' => 'required|string',
         ]);
-
+    
         $newImageName = uniqid() . '-' . $request->title . '.' . $request->image->extension();
-
         $request->image->move(public_path('images'), $newImageName);
-
+    
         Post::create([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
             'image_path' => $newImageName,
-            'user_id' => auth()->user()->id
+            'user_id' => auth()->user()->id,
+            'artist' => $request->input('artist'),
+            'medium' => $request->input('medium'),
+            'origin' => $request->input('origin'),
+            'year' => $request->input('year'),
         ]);
-
-        return redirect('/blog')
-            ->with('message', 'Your post has been added!');
+    
+        return redirect('/blog')->with('message', 'Your post has been added!');
     }
-
+    
     /**
      * Display the specified resource.
      *
@@ -100,19 +106,26 @@ class PostsController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
+            'artist' => 'required|string',
+            'medium' => 'required|string',
+            'origin' => 'required|string',
+            'year' => 'required|string',
         ]);
-
-        Post::where('slug', $slug)
-            ->update([
-                'title' => $request->input('title'),
-                'description' => $request->input('description'),
-                'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
-                'user_id' => auth()->user()->id
-            ]);
-
-        return redirect('/blog')
-            ->with('message', 'Your post has been updated!');
+    
+        Post::where('slug', $slug)->update([
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
+            'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
+            'artist' => $request->input('artist'),
+            'medium' => $request->input('medium'),
+            'origin' => $request->input('origin'),
+            'year' => $request->input('year'),
+            'user_id' => auth()->user()->id
+        ]);
+    
+        return redirect('/blog')->with('message', 'Your post has been updated!');
     }
+    
 
     /**
      * Remove the specified resource from storage.
