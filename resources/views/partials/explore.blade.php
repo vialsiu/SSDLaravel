@@ -19,11 +19,13 @@
 
         <!-- Card 2: Exhibitions -->
         <div class="text-center">
+            <a href="{{ url('/artists') }}">
             <img src="{{ asset('images/piece2.jpg') }}" class="w-full h-64 object-cover rounded-lg shadow-md">
             <h3 class="text-xl font-medium text-gray-900 mt-4 relative pb-2 after:block after:w-10 after:border after:border-gray-300 after:mt-2 after:mx-auto">
                 Artists
             </h3>
             <p class="text-gray-600 mt-2 text-sm">Do you have what it takes to be an artist?</p>
+        </a>
         </div>
 
         <!-- Card 3: What's On -->
