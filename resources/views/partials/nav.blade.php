@@ -3,7 +3,7 @@
         
         <!-- Logo on the Left -->
         <div class="flex items-center space-x-3 nav-logo">
-            <img src="{{ asset('/images/statue.png') }}" alt="Logo" class="h-10 w-auto">
+            <img src="{{ asset('/images/compass.png') }}" alt="Logo" class="h-10 w-auto">
             <h1 class="text-gray-900 gradient-text">Viva il Painted Voyage</h1>
         </div>
 
@@ -13,7 +13,21 @@
             <li><a href="{{ route('blog.index') }}" class="text-gray-700 hover:text-black transition">Blogs</a></li>
             <li><a href="{{ route('blog.index') }}" class="text-gray-700 hover:text-black transition">Artists</a></li>
             <li><a href="{{ route('contact') }}" class="text-gray-700 hover:text-black transition">Galleries</a></li>
-            <li><a href="#" class="text-gray-700 hover:text-black transition">Log in</a></li>
+            
+            <!-- Log in Button with Dynamic Authentication Check -->
+            @guest
+                <li><a href="{{ route('login') }}" class="text-gray-700 hover:text-black transition">Log in</a></li>
+            @else
+                <li>
+                    <a href="{{ route('logout') }}" class="text-gray-700 hover:text-black transition"
+                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        Log out
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                        @csrf
+                    </form>
+                </li>
+            @endguest
         </ul>
 
         <!-- Search Icon -->

@@ -75,4 +75,10 @@
         </template>
     </div>
 </div>
+
+@include('partials.explore')
+
+@include('partials.collections')
+
+
 @endsection
