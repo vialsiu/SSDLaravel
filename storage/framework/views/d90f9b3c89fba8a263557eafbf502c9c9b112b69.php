@@ -38,19 +38,37 @@
     
         <input type="text" name="year" placeholder="Year..." class="bg-transparent block border-b-2 w-full h-12 text-xl outline-none">
     
+        <!-- Image Upload with Preview -->
         <div class="bg-grey-lighter pt-5">
             <label class="w-44 flex flex-col items-center px-2 py-3 bg-white rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer">
                 <span class="mt-2 text-base leading-normal">Select a file</span>
-                <input type="file" name="image" class="hidden">
+                <input type="file" name="image" class="hidden" id="imageUpload" accept="image/*" onchange="previewImage(event)">
             </label>
         </div>
-    
-        <button type="submit" class="uppercase mt-5 bg-blue-500 text-gray-100 text-lg font-extrabold py-3 px-6 rounded-3xl">
+
+        <!-- Image Preview -->
+        <div class="mt-5">
+            <img id="imagePreview" src="" alt="Selected Image" class="hidden max-w-full h-auto rounded-md shadow-md">
+        </div>
+
+        <button type="submit" class="px-4 py-2 bg-gray-200 text-gray-800 font-medium rounded-md hover:bg-gray-300 transition duration-200 ease-in-out mt-5">
             Submit Post
         </button>
     </form>
-    
 </div>
 
+<script>
+    function previewImage(event) {
+        var reader = new FileReader();
+        reader.onload = function() {
+            var output = document.getElementById('imagePreview');
+            output.src = reader.result;
+            output.classList.remove('hidden');
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
+
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\fedan\Pictures\2nd Year Work\Paint Across the World\resources\views/blog/create.blade.php ENDPATH**/ ?>

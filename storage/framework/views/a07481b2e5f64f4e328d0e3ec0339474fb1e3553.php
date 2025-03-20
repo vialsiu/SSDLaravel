@@ -1,4 +1,4 @@
-<footer class="bg-gray-100 py-10 text-gray-800 text-sm">
+<footer class="bg-gray-200 py-10 text-gray-800 text-sm">
     <div class="container mx-auto px-6 lg:px-20 grid grid-cols-1 md:grid-cols-4 gap-6">
 
         <!-- Contact Information -->

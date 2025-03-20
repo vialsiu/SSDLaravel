@@ -2,10 +2,10 @@
 
 <?php $__env->startSection('content'); ?>
 <div class="w-4/5 m-auto text-center">
-    <div class="py-24 border-b border-gray-200  pb-10">
+    <div class="py-24 border-b border-gray-200 pb-10">
         <div class="bg-cover bg-center w-full" style="background-image: url('images/piece7.jpg')">
             <h2 class="text-6xl text-white py-20">
-            Blog Posts
+                Blog Posts
             </h2>
         </div>
     </div>
@@ -13,7 +13,7 @@
 
 <?php if(session()->has('message')): ?>
     <div class="w-4/5 m-auto mt-10 pl-2">
-        <p class="w-2/6 mb-4 text-gray-50 bg-green-500 rounded-2xl py-2">
+        <p class="uppercase bg-gray-300 text-gray-800 text-sm font-bold py-2 px-6 rounded">
             <?php echo e(session()->get('message')); ?>
 
         </p>
@@ -22,9 +22,8 @@
 
 <?php if(Auth::check()): ?>
     <div class="pt-8 w-4/5 m-auto">
-        <a 
-            href="/blog/create"
-            class="uppercase bg-gray-300 text-gray-800 text-sm font-bold py-2 px-6 rounded hover:bg-gray-400 transition duration-300 ease-in-out mb-4">
+        <a href="/blog/create"
+           class="uppercase bg-orange-50 text-gray-800 text-sm font-bold py-2 px-6 rounded hover:bg-gray-400 transition duration-300 ease-in-out mb-4 border border-purple-100">
             Create post
         </a>
     </div>
@@ -33,7 +32,7 @@
 <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
     <div class="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-6 border-b border-gray-200">
         <div>
-            <img src="<?php echo e(asset('images/' . $post->image_path)); ?>" alt="">
+            <img src="<?php echo e(asset('images/' . $post->image_path)); ?>" alt="" class="rounded-lg shadow-md">
         </div>
         <div>
             <h2 class="text-gray-700 font-bold text-5xl pb-4">
@@ -42,32 +41,32 @@
             </h2>
 
             <span class="text-gray-500">
-                By <span class="font-bold italic text-gray-800"><?php echo e($post->user->name); ?></span>, Created on <?php echo e(date('jS M Y', strtotime($post->updated_at))); ?>
+                By <span class="font-bold italic text-gray-800"><?php echo e($post->user->name); ?></span>, 
+                Created on <?php echo e(date('jS M Y', strtotime($post->updated_at))); ?>
 
             </span>
 
-            <p class="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light">
-                <?php echo e($post->description); ?>
+            <!-- Truncate the description to fewer words -->
+            <p class="text-xl text-gray-700 pt-4 pb-10 leading-8 font-light">
+                <?php echo e(\Illuminate\Support\Str::words($post->description, 60, '...')); ?>
 
             </p>
 
-            <a href="/blog/<?php echo e($post->slug); ?>" class="uppercase bg-gray-300 text-gray-800 text-sm font-bold py-2 px-6 rounded hover:bg-gray-400 transition duration-300 ease-in-out mb-4">
+            <a href="/blog/<?php echo e($post->slug); ?>" 
+               class="uppercase bg-gray-300 text-gray-800 text-sm font-bold py-2 px-6 rounded hover:bg-gray-400 transition duration-300 ease-in-out mb-4">
                 Keep Reading
             </a>
 
             <?php if(isset(Auth::user()->id) && Auth::user()->id == $post->user_id): ?>
-            <span class="float-right">
-                <a href="/blog/<?php echo e($post->slug); ?>/edit"
-                   class="px-4 py-2 bg-gray-200 text-gray-800 font-medium rounded-md hover:bg-gray-300 transition duration-200 ease-in-out">
-                    Edit
-                </a>
-            </span>
+                <span class="float-right">
+                    <a href="/blog/<?php echo e($post->slug); ?>/edit"
+                       class="px-4 py-2 bg-gray-200 text-gray-800 font-medium rounded-md hover:bg-gray-300 transition duration-200 ease-in-out">
+                        Edit
+                    </a>
                 </span>
 
                 <span class="float-right">
-                     <form 
-                        action="/blog/<?php echo e($post->slug); ?>"
-                        method="POST">
+                     <form action="/blog/<?php echo e($post->slug); ?>" method="POST">
                         <?php echo csrf_field(); ?>
                         <?php echo method_field('delete'); ?>
 
@@ -76,7 +75,6 @@
                             type="submit">
                             Delete
                         </button>
-
                     </form>
                 </span>
             <?php endif; ?>
@@ -85,4 +83,5 @@
 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\fedan\Pictures\2nd Year Work\Paint Across the World\resources\views/blog/index.blade.php ENDPATH**/ ?>
