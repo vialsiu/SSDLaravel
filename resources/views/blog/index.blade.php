@@ -22,7 +22,7 @@
 @if (Auth::check())
     <div class="pt-8 w-4/5 m-auto">
         <a href="/blog/create"
-           class="uppercase bg-orange-50 text-gray-800 text-sm font-bold py-2 px-6 rounded hover:bg-gray-400 transition duration-300 ease-in-out mb-4 border border-purple-100">
+           class="uppercase bg-gray-200 text-gray-800 text-sm font-bold py-2 px-6 rounded hover:bg-gray-400 transition duration-300 ease-in-out mb-4 border border-purple-100">
             Create post
         </a>
     </div>
@@ -31,7 +31,10 @@
 @foreach ($posts as $post)
     <div class="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-6 border-b border-gray-200">
         <div>
-            <img src="{{ asset('images/' . $post->image_path) }}" alt="" class="rounded-lg shadow-md">
+            <!-- Image with max-height -->
+            <img src="{{ asset('images/' . $post->image_path) }}" 
+                 alt="{{ $post->title }}" 
+                 class="rounded-lg shadow-md max-h-192 object-cover w-auto">
         </div>
         <div>
             <h2 class="text-gray-700 font-bold text-5xl pb-4">
@@ -43,13 +46,13 @@
                 Created on {{ date('jS M Y', strtotime($post->updated_at)) }}
             </span>
 
-            <!-- Truncate the description to fewer words -->
+            <!-- Truncate the description to 100 words -->
             <p class="text-xl text-gray-700 pt-4 pb-10 leading-8 font-light">
-                {{ \Illuminate\Support\Str::words($post->description, 60, '...') }}
+                {{ \Illuminate\Support\Str::words($post->description, 100, '...') }}
             </p>
 
             <a href="/blog/{{ $post->slug }}" 
-               class="uppercase bg-gray-300 text-gray-800 text-sm font-bold py-2 px-6 rounded hover:bg-gray-400 transition duration-300 ease-in-out mb-4">
+               class="uppercase bg-gray-200 text-gray-800 text-sm font-bold py-2 px-6 rounded hover:bg-gray-400 transition duration-300 ease-in-out mb-4">
                 Keep Reading
             </a>
 
