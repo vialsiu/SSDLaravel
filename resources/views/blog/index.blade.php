@@ -48,7 +48,7 @@
 
             <!-- Truncate the description to 100 words -->
             <p class="text-xl text-gray-700 pt-4 pb-10 leading-8 font-light">
-                {{ \Illuminate\Support\Str::words($post->description, 100, '...') }}
+                {{ \Illuminate\Support\Str::words($post->description, 50, '...') }}
             </p>
 
             <a href="/blog/{{ $post->slug }}" 
