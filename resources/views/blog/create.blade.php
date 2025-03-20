@@ -39,8 +39,8 @@
     
         <!-- Image Upload with Preview -->
         <div class="bg-grey-lighter pt-5">
-            <label class="w-44 flex flex-col items-center px-2 py-3 bg-white rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer">
-                <span class="mt-2 text-base leading-normal">Select a file</span>
+            <label class="w-30 flex pb-2 flex-col items-center px-4 bg-gray-200 text-gray-800 font-medium rounded-md hover:bg-gray-300 transition duration-200 ease-in-out cursor-pointer">
+                <span class="mt-2 text-base leading-normal">Select a file...</span>
                 <input type="file" name="image" class="hidden" id="imageUpload" accept="image/*" onchange="previewImage(event)">
             </label>
         </div>
@@ -50,9 +50,11 @@
             <img id="imagePreview" src="" alt="Selected Image" class="hidden max-w-full h-auto rounded-md shadow-md">
         </div>
 
-        <button type="submit" class="px-4 py-2 bg-gray-200 text-gray-800 font-medium rounded-md hover:bg-gray-300 transition duration-200 ease-in-out mt-5">
+        <div class="flex justify-end mt-5">
+            <button type="submit" class="px-4 py-2 bg-gray-200 text-gray-800 font-medium rounded-md hover:bg-purple-400 transition duration-200 ease-in-out">
             Submit Post
-        </button>
+            </button>
+        </div>
     </form>
 </div>
 

@@ -5,7 +5,7 @@
     <div class="py-24 border-b border-gray-200 pb-10">
         <div class="bg-cover bg-center w-full" style="background-image: url('images/piece7.jpg')">
             <h2 class="text-6xl text-white py-20">
-                Blog Posts
+                Blogs - Paintings
             </h2>
         </div>
     </div>

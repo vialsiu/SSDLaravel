@@ -8,11 +8,13 @@
         
         <!-- Card 1:  -->
         <div class="text-center">
-            <img src="{{ asset('images/piece1.jpg') }}"  class="w-full h-64 object-cover rounded-lg shadow-md">
+            <a href="{{ url('/blog') }}">
+            <img src="{{ asset('images/piece1.jpg') }}" class="w-full h-64 object-cover rounded-lg shadow-md">
             <h3 class="text-xl font-medium text-gray-900 mt-4 relative pb-2 after:block after:w-10 after:border after:border-gray-300 after:mt-2 after:mx-auto">
                 See latest blogs
             </h3>
             <p class="text-gray-600 mt-2 text-sm">Unlock your horizons to learn</p>
+            </a>
         </div>
 
         <!-- Card 2: Exhibitions -->
