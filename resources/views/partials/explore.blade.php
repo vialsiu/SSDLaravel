@@ -8,7 +8,7 @@
         
         <!-- Card 1:  -->
         <div class="text-center">
-            <img src="{{ asset('images/backgroundpic.jpeg') }}"  class="w-full h-64 object-cover rounded-lg shadow-md">
+            <img src="{{ asset('images/piece1.jpg') }}"  class="w-full h-64 object-cover rounded-lg shadow-md">
             <h3 class="text-xl font-medium text-gray-900 mt-4 relative pb-2 after:block after:w-10 after:border after:border-gray-300 after:mt-2 after:mx-auto">
                 See latest blogs
             </h3>
@@ -17,7 +17,7 @@
 
         <!-- Card 2: Exhibitions -->
         <div class="text-center">
-            <img src="{{ asset('images/backgroundpic.jpeg') }}" class="w-full h-64 object-cover rounded-lg shadow-md">
+            <img src="{{ asset('images/piece2.jpg') }}" class="w-full h-64 object-cover rounded-lg shadow-md">
             <h3 class="text-xl font-medium text-gray-900 mt-4 relative pb-2 after:block after:w-10 after:border after:border-gray-300 after:mt-2 after:mx-auto">
                 Artists
             </h3>
@@ -26,7 +26,7 @@
 
         <!-- Card 3: What's On -->
         <div class="text-center">
-            <img src="{{ asset('images/backgroundpic.jpeg') }}" alt="What's On" class="w-full h-64 object-cover rounded-lg shadow-md">
+            <img src="{{ asset('images/piece3.jpg') }}" alt="What's On" class="w-full h-64 object-cover rounded-lg shadow-md">
             <h3 class="text-xl font-medium text-gray-900 mt-4 relative pb-2 after:block after:w-10 after:border after:border-gray-300 after:mt-2 after:mx-auto">
                 What's on
             </h3>
@@ -35,7 +35,7 @@
 
         <!-- Card 4: Membership -->
         <div class="text-center">
-            <img src="{{ asset('images/backgroundpic.jpeg') }}"class="w-full h-64 object-cover rounded-lg shadow-md">
+            <img src="{{ asset('images/piece4.jpg') }}"class="w-full h-64 object-cover rounded-lg shadow-md">
             <h3 class="text-xl font-medium text-gray-900 mt-4 relative pb-2 after:block after:w-10 after:border after:border-gray-300 after:mt-2 after:mx-auto">
                 Placeholder
             </h3>
