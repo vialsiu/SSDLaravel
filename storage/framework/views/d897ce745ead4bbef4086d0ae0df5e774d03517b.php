@@ -63,11 +63,11 @@ unset($__errorArgs, $__bag); ?>
             <!-- Remember Me & Forgot Password -->
             <div class="flex justify-between items-center text-sm">
                 <label class="flex items-center">
-                    <input type="checkbox" name="remember" class="text-orange-500 focus:ring-orange-300">
+                    <input type="checkbox" name="remember" class="text-brown-500 focus:ring-brown-300">
                     <span class="ml-2 text-gray-900">Remember Me</span>
                 </label>
                 <?php if(Route::has('password.request')): ?>
-                    <a href="<?php echo e(route('password.request')); ?>" class="text-orange-600 hover:text-orange-800">Forgot Password?</a>
+                    <a href="<?php echo e(route('password.request')); ?>" class="text-brown-600 hover:text-brown-800">Forgot Password?</a>
                 <?php endif; ?>
             </div>
 
@@ -80,16 +80,11 @@ unset($__errorArgs, $__bag); ?>
             <!-- Register Link -->
             <?php if(Route::has('register')): ?>
                 <p class="text-center text-sm text-gray-900 mt-4">
-                    Not registered? <a href="<?php echo e(route('register')); ?>" class="text-orange-600 hover:text-orange-800 font-semibold">Create an account</a>
+                    Not registered? <a href="<?php echo e(route('register')); ?>" class="text-brown-600 hover:text-brown-800 font-semibold">Create an account</a>
                 </p>
             <?php endif; ?>
 
-            <!-- Demo User Information -->
-            <div class="text-xs text-gray-900 text-center mt-6">
-                <strong>Demo User:</strong><br>
-                Email: <span class="font-mono text-gray-900">test@test.com</span><br>
-                Password: <span class="font-mono text-gray-900">randomPassword</span>
-            </div>
+            
         </form>
     </div>
 </div>

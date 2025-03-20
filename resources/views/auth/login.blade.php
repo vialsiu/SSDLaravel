@@ -37,11 +37,11 @@
             <!-- Remember Me & Forgot Password -->
             <div class="flex justify-between items-center text-sm">
                 <label class="flex items-center">
-                    <input type="checkbox" name="remember" class="text-orange-500 focus:ring-orange-300">
+                    <input type="checkbox" name="remember" class="text-brown-500 focus:ring-brown-300">
                     <span class="ml-2 text-gray-900">Remember Me</span>
                 </label>
                 @if (Route::has('password.request'))
-                    <a href="{{ route('password.request') }}" class="text-orange-600 hover:text-orange-800">Forgot Password?</a>
+                    <a href="{{ route('password.request') }}" class="text-brown-600 hover:text-brown-800">Forgot Password?</a>
                 @endif
             </div>
 
@@ -54,16 +54,16 @@
             <!-- Register Link -->
             @if (Route::has('register'))
                 <p class="text-center text-sm text-gray-900 mt-4">
-                    Not registered? <a href="{{ route('register') }}" class="text-orange-600 hover:text-orange-800 font-semibold">Create an account</a>
+                    Not registered? <a href="{{ route('register') }}" class="text-brown-600 hover:text-brown-800 font-semibold">Create an account</a>
                 </p>
             @endif
 
-            <!-- Demo User Information -->
+            {{-- <!-- Demo User Information -->
             <div class="text-xs text-gray-900 text-center mt-6">
                 <strong>Demo User:</strong><br>
                 Email: <span class="font-mono text-gray-900">test@test.com</span><br>
                 Password: <span class="font-mono text-gray-900">randomPassword</span>
-            </div>
+            </div> --}}
         </form>
     </div>
 </div>
