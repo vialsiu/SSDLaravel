@@ -20,6 +20,10 @@ Route::resource('/blog', PostsController::class);
 // Authentication Routes
 Auth::routes();
 
+//artists
+Route::get('/artists', [PagesController::class, 'artists'])->name('artist.index');
+
+
 // Authenticated User Dashboard
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 

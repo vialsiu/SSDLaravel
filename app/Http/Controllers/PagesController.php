@@ -10,4 +10,9 @@ class PagesController extends Controller
     {
         return view('index');
     }
+
+    public function artists()
+    {
+        return view('artists');
+    }
 }

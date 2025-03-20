@@ -11,7 +11,7 @@
         <ul class="flex space-x-6 text-lg font-medium">
             <li><a href="{{ route('home') }}" class="text-gray-700 hover:text-black transition">Home</a></li>
             <li><a href="{{ route('blog.index') }}" class="text-gray-700 hover:text-black transition">Blogs</a></li>
-            <li><a href="{{ route('blog.index') }}" class="text-gray-700 hover:text-black transition">Artists</a></li>
+            <li><a href="{{ route('artist.index') }}" class="text-gray-700 hover:text-black transition">Artists</a></li>
             <li><a href="{{ route('contact') }}" class="text-gray-700 hover:text-black transition">Galleries</a></li>
             
             <!-- Log in Button with Dynamic Authentication Check -->
