@@ -3,8 +3,10 @@
         
         <!-- Logo on the Left -->
         <div class="flex items-center space-x-3 nav-logo">
-            <img src="{{ asset('/images/compass.png') }}" alt="Logo" class="h-10 w-auto">
+            <a href="{{ route('home') }}" class="flex items-center space-x-3">
+            <img src="{{ asset('/images/ship.png') }}" alt="Logo" class="h-7 w-auto">
             <h1 class="text-gray-900 gradient-text">Viva il Painted Voyage</h1>
+            </a>
         </div>
 
         <!-- Navigation Links -->
@@ -12,8 +14,9 @@
             <li><a href="{{ route('home') }}" class="text-gray-700 hover:text-black transition">Home</a></li>
             <li><a href="{{ route('blog.index') }}" class="text-gray-700 hover:text-black transition">Blogs</a></li>
             <li><a href="{{ route('artist.index') }}" class="text-gray-700 hover:text-black transition">Artists</a></li>
-            <li><a href="{{ route('contact') }}" class="text-gray-700 hover:text-black transition">Galleries</a></li>
-            
+            <li><a href="{{ route('home') }}" class="text-gray-700 hover:text-black transition">Galleries</a></li>
+            <li><a href="{{ route('contact') }}" class="text-gray-700 hover:text-black transition">Contact Us</a></li>
+
             <!-- Log in Button with Dynamic Authentication Check -->
             @guest
                 <li><a href="{{ route('login') }}" class="text-gray-700 hover:text-black transition">Log in</a></li>

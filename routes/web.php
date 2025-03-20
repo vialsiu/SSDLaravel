@@ -22,7 +22,9 @@ Auth::routes();
 
 //artists
 Route::get('/artists', [PagesController::class, 'artists'])->name('artist.index');
-
+//contact
+Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
+Route::post('/contact', [PagesController::class, 'submitContactForm'])->name('contact.submit');
 
 // Authenticated User Dashboard
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
