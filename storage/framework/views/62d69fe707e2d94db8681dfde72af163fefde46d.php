@@ -5,7 +5,7 @@
     <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
     <!-- Content Grid -->
-    <div class="relative container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+    <div class="relative w-full max-w-none px-6 lg:px-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
         
         <!-- Item 1 -->
         <div>
@@ -16,8 +16,7 @@
             </p>
         </div>
 
-
-        <!-- Item 3 -->
+        <!-- Item 2 -->
         <div>
             <h3 class="text-2xl font-semibold">Creating an understanding of the ages</h3>
             <div class="w-12 border-b-2 border-white my-2"></div>
@@ -26,7 +25,7 @@
             </p>
         </div>
 
-        <!-- Item 2 -->
+        <!-- Item 3 -->
         <div>
             <h3 class="text-2xl font-semibold">Starting the Conversation</h3>
             <div class="w-12 border-b-2 border-white my-2"></div>
@@ -34,7 +33,6 @@
                 Where would the world be without creativity?
             </p>
         </div>
-
 
         <!-- Item 4 -->
         <div>

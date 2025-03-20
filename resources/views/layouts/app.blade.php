@@ -8,20 +8,16 @@
     <link rel="icon" type="image/png" href="{{ asset('images/compass.png') }}">
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </head>
-<body class="text-gray-900 bg-gray-100">
-
+<body class="text-gray-900 bg-gray-100 flex flex-col min-h-screen">
+    
     @include('partials.nav')
 
-    <div class="container mx-auto py-10">
+    <div class="container mx-auto py-10 flex-grow">
         @yield('content')
     </div>
-
-    {{-- @include('partials.explore')
-
-    @include('partials.collections') --}}
-
 
     @include('partials.footer')
 
 </body>
+
 </html>
