@@ -14,7 +14,7 @@
             <li><a href="<?php echo e(route('home')); ?>" class="text-gray-700 hover:text-black transition">Home</a></li>
             <li><a href="<?php echo e(route('blog.index')); ?>" class="text-gray-700 hover:text-black transition">Blogs</a></li>
             <li><a href="<?php echo e(route('artist.index')); ?>" class="text-gray-700 hover:text-black transition">Artists</a></li>
-            <li><a href="<?php echo e(route('home')); ?>" class="text-gray-700 hover:text-black transition">Galleries</a></li>
+            <li><a href="<?php echo e(url('/quiz')); ?>" class="text-gray-700 hover:text-black transition">Art Quiz</a></li>
             <li><a href="<?php echo e(route('contact')); ?>" class="text-gray-700 hover:text-black transition">Contact Us</a></li>
 
             <!-- Log in Button with Dynamic Authentication Check -->

@@ -34,3 +34,9 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
+
+//quiz
+Route::get('/quiz', function () {
+    return view('quiz');
+});
+
