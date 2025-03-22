@@ -51,7 +51,7 @@
         </div>
 
         <div class="flex justify-end mt-5">
-            <button type="submit" class="px-4 py-2 bg-gray-200 text-gray-800 font-medium rounded-md hover:bg-purple-400 transition duration-200 ease-in-out">
+            <button type="submit" class="px-4 py-2 bg-gray-200 text-gray-800 font-medium rounded-md hover:bg-gray-300 transition duration-200 ease-in-out">
             Submit Post
             </button>
         </div>

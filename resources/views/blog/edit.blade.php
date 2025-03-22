@@ -38,9 +38,11 @@
     
         <input type="text" name="year" value="{{ $post->year }}" class="bg-transparent block border-b-2 w-full h-12 text-xl outline-none">
     
-        <button type="submit" class="uppercase mt-5 bg-blue-500 text-gray-100 text-lg font-extrabold py-3 px-6 rounded-3xl">
+        <div class="flex justify-end mt-5">
+            <button type="submit" class="px-4 py-2 bg-gray-200 text-gray-800 font-medium rounded-md hover:bg-gray-300 transition duration-200 ease-in-out">
             Update Post
-        </button>
+            </button>
+        </div>
     </form>
     
 </div>
