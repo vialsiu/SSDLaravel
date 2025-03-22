@@ -21,6 +21,7 @@
             .then(response => response.json())
             .then(data => {
                 currentQuestion = data;
+                questionType = data.questionType;
                 document.getElementById('question').innerText = data.question;
 
                 let choicesContainer = document.getElementById('choices');
@@ -55,8 +56,13 @@
         "Content-Type": "application/json",
         "Accept": "application/json"
     },
-    body: JSON.stringify({ id: currentQuestion.id, answer: answer })
+    body: JSON.stringify({ 
+    id: currentQuestion.id, 
+    answer: answer, 
+    questionType: questionType 
 })
+})
+
 
         .then(response => response.json())
         .then(data => {

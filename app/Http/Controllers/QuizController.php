@@ -7,16 +7,10 @@ use App\Models\Post;
 
 class QuizController extends Controller
 {
-    // Fetch a random quiz question from the Posts database
     public function getQuiz()
     {
         $post = Post::inRandomOrder()->first();
 
-        if (!$post) {
-            return response()->json(['error' => 'No posts available for quiz.'], 404);
-        }
-
-        // Randomly select a type of question
         $questionTypes = [
             'artist' => "Who created '{$post->title}'?",
             'medium' => "What is the medium of '{$post->title}'?",
@@ -27,34 +21,37 @@ class QuizController extends Controller
         $randomKey = array_rand($questionTypes);
         $correctAnswer = $post->$randomKey;
 
-        // Get 3 more random wrong answers from other posts
         $wrongAnswers = Post::where($randomKey, '!=', $correctAnswer)
             ->inRandomOrder()
             ->limit(3)
             ->pluck($randomKey)
             ->toArray();
 
-        // Ensure there are 4 total choices
         $choices = array_merge($wrongAnswers, [$correctAnswer]);
-        shuffle($choices); // Randomize order
+        shuffle($choices);
 
         return response()->json([
             'id' => $post->id,
             'question' => $questionTypes[$randomKey],
-            'choices' => $choices,
-            'correct_answer' => $correctAnswer
+            'questionType' => $randomKey,
+            'choices' => $choices
         ]);
     }
 
-    // Validate answer
     public function checkAnswer(Request $request)
     {
+        $request->validate([
+            'id' => 'required|exists:posts,id',
+            'answer' => 'required|string',
+            'questionType' => 'required|string|in:artist,medium,origin,year'
+        ]);
+
         $post = Post::findOrFail($request->id);
-        $isCorrect = $request->answer === $post->$request->questionType;
+        $correct = strtolower($request->answer) === strtolower($post->{$request->questionType});
 
         return response()->json([
-            'correct' => $isCorrect,
-            'correct_answer' => $post->$request->questionType
+            'correct' => $correct,
+            'correct_answer' => $post->{$request->questionType}
         ]);
     }
 }
