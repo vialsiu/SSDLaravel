@@ -13,8 +13,6 @@
 
 @include('partials.exploreartist')
 
-<!-- Filler Essay Section -->
-
 
 
 @endsection

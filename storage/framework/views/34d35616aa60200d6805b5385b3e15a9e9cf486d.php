@@ -11,8 +11,6 @@
 
 <?php echo $__env->make('partials.exploreartist', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-<!-- Filler Essay Section -->
-
 
 
 <?php $__env->stopSection(); ?>
