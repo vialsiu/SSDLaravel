@@ -29,10 +29,10 @@ Route::post('/contact', [PagesController::class, 'submitContactForm'])->name('co
 // Authenticated User Dashboard
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
-// Contact Page Route (Fix for "Route [contact] not defined")
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
+//galleries
+ Route::get('/galleries', function () {
+    return view('galleries');
+})->name('galleries');
 
 
 //quiz
