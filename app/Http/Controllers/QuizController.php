@@ -21,14 +21,19 @@ class QuizController extends Controller
         $randomKey = array_rand($questionTypes);
         $correctAnswer = $post->$randomKey;
 
-        $wrongAnswers = Post::where($randomKey, '!=', $correctAnswer)
-            ->inRandomOrder()
-            ->limit(3)
-            ->pluck($randomKey)
-            ->toArray();
+$wrongAnswers = Post::where($randomKey, '!=', $correctAnswer)
+    ->inRandomOrder()
+    ->pluck($randomKey)
+    ->unique()
+    ->filter()
+    ->take(3)
+    ->values()
+    ->toArray();
+
 
         $choices = array_merge($wrongAnswers, [$correctAnswer]);
         shuffle($choices);
+    
 
         return response()->json([
             'id' => $post->id,
