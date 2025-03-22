@@ -3,16 +3,16 @@
      style="background-image: url('<?php echo e(asset('images/piece6.jpg')); ?>'); overflow: hidden;">
 
     <div class="absolute inset-0 overflow-y-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-4xl mx-auto text-center mt-24 rounded shadow" 
-             style="background-color: #efe9e9; color: #4A403A; padding: 2.5rem 1.5rem;">
+        <div class="max-w-3xl mx-auto text-center mt-24 rounded shadow" 
+             style="background-color: #efe9e9; color: #4A403A; padding: 1.5rem;">
             
             <h1 class="text-3xl font-bold mb-4" style="color: #3E3A36;">Art Trivia Quiz</h1>
             
             <img id="painting-image" src="" alt="Artwork" 
-            class="w-full max-h-64 object-contain rounded mb-4 opacity-0 transition-opacity duration-700">
+            class="w-full max-h-64 object-contain rounded mb-4">
        
 
-            <div id="quiz-container" class="mt-5 p-5 shadow-inner rounded-md" 
+            <div id="quiz-container" class="mt-5 px-5 py-3 shadow-inner rounded-md max-w-2xl mx-auto" 
                  style="background-color: #e2dddd;">
                  
                  <p id="question-number" class="text-lg font-semibold mb-2"></p>
@@ -64,13 +64,7 @@
                 document.getElementById('question-number').innerText = `Question ${questionCount + 1} of ${totalQuestions}`;
                 document.getElementById('question').innerText = data.question;
                 const paintingImg = document.getElementById('painting-image');
-                    paintingImg.classList.remove('opacity-100');
-                    paintingImg.classList.add('opacity-0');
-                    paintingImg.onload = () => {
-                        paintingImg.classList.remove('opacity-0');
-                        paintingImg.classList.add('opacity-100');
-                    };
-                    paintingImg.src = data.image_path;
+                paintingImg.src = data.image_path;
 
                 const choicesContainer = document.getElementById('choices');
                 choicesContainer.innerHTML = '';
@@ -153,7 +147,7 @@
 
         setTimeout(() => {
             fetchQuestion();
-        }, data.correct ? 300 : 1000); 
+        }, data.correct ? 300 : 500); 
     });
 
 }

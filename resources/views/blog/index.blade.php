@@ -12,12 +12,17 @@
 </div>
 
 @if (session()->has('message'))
-    <div class="w-4/5 m-auto mt-10 pl-2">
-        <p class="uppercase bg-gray-300 text-gray-800 text-sm font-bold py-2 px-6 rounded">
+    <div id="flash-message" class="w-4/5 m-auto mt-10 pl-2 relative">
+        <p class="uppercase bg-gray-300 text-gray-800 text-sm font-bold py-2 px-6 rounded relative">
             {{ session()->get('message') }}
+            <button onclick="document.getElementById('flash-message').remove()"
+                    class="absolute top-1 right-2 text-gray-700 text-lg font-bold hover:text-black">
+                &times;
+            </button>
         </p>
     </div>
 @endif
+
 
 @if (Auth::check())
     <div class="pt-8 w-4/5 m-auto">

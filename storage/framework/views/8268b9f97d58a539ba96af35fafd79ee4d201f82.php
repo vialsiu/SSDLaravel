@@ -1,7 +1,7 @@
 
 
 <?php $__env->startSection('content'); ?>
-<div class="w-4/5 m-auto text-left">
+<div class="w-4/5 pt-24 m-auto text-left">
     <div class="py-15">
         <h1 class="text-6xl">
             Update Post
@@ -13,7 +13,7 @@
     <div class="w-4/5 m-auto">
         <ul>
             <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <li class="w-1/5 mb-4 text-gray-50 bg-red-700 rounded-2xl py-4">
+                <li class="w-1/5 mb-2 text-gray-50 bg-red-700 rounded-2xl py-4">
                     <?php echo e($error); ?>
 
                 </li>
@@ -22,7 +22,7 @@
     </div>
 <?php endif; ?>
 
-<div class="w-4/5 m-auto pt-20">
+<div class="w-4/5 m-auto">
     <form action="/blog/<?php echo e($post->slug); ?>" method="POST" enctype="multipart/form-data">
         <?php echo csrf_field(); ?>
         <?php echo method_field('PUT'); ?>
