@@ -32,13 +32,35 @@
 <script>
     let currentQuestion = null;
     let questionType = null;
+    let usedQuestionIds = [];
+    let totalQuestions = 10;
+    let score = 0;
+    let questionCount = 0;
+    let originalQuizHTML = "";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        originalQuizHTML = document.getElementById('quiz-container').innerHTML;
+        fetchQuestion();
+    });
 
     function fetchQuestion() {
+        if (questionCount >= totalQuestions) {
+            showFinalScore();
+            return;
+        }
+
         fetch('/api/quiz')
             .then(response => response.json())
             .then(data => {
+                if (usedQuestionIds.includes(data.id)) {
+                    fetchQuestion(); 
+                    return;
+                }
+
+                usedQuestionIds.push(data.id);
                 currentQuestion = data;
                 questionType = data.questionType;
+
                 document.getElementById('question').innerText = data.question;
                 document.getElementById('painting-image').src = data.image_path;
 
@@ -51,6 +73,7 @@
                     button.classList.add("px-3", "py-2", "border", "border-gray-500", "rounded", "mr-2", "mt-2");
                     button.style.backgroundColor = "#d7d1d1";
                     button.style.color = "#4A403A";
+                    button.style.cursor = "pointer";
 
                     button.addEventListener("mouseenter", () => {
                         if (!button.classList.contains('selected')) {
@@ -106,23 +129,45 @@
         .then(response => response.json())
         .then(data => {
             const feedback = document.getElementById('feedback');
-            // feedback.style.backgroundColor = "#ded6d1";
             feedback.style.color = "#4A403A";
             feedback.style.padding = "0.5rem";
             feedback.style.borderRadius = "0.375rem";
 
+            questionCount++;
             if (data.correct) {
-            feedback.innerText = "Correct!";
-            setTimeout(fetchQuestion, 500); 
-        } else {
-            feedback.innerText = "Wrong! The correct answer is: " + data.correct_answer;
-            setTimeout(fetchQuestion, 2000); 
-        }
-    });
+                score++;
+                feedback.innerText = "Correct!";
+                setTimeout(fetchQuestion, 500);
+            } else {
+                feedback.innerText = "Wrong! The correct answer is: " + data.correct_answer;
+                setTimeout(fetchQuestion, 2000);
+            }
+        });
     }
 
-    document.addEventListener("DOMContentLoaded", fetchQuestion);
+    function showFinalScore() {
+        const container = document.getElementById('quiz-container');
+        container.innerHTML = `
+            <p class="text-2xl font-semibold mb-4">You scored ${score} out of ${totalQuestions}!</p>
+            <button id="restart" class="px-4 py-2 mt-4 font-bold rounded"
+                style="background-color: #5a504b; color: #e9e7e7;">
+                Play Again
+            </button>
+        `;
+
+        document.getElementById('restart').onclick = () => {
+            score = 0;
+            questionCount = 0;
+            usedQuestionIds = [];
+
+            container.innerHTML = originalQuizHTML;
+
+            fetchQuestion();
+        };
+    }
 </script>
+
+
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\fedan\Pictures\2nd Year Work\Paint Across the World\resources\views/quiz.blade.php ENDPATH**/ ?>
