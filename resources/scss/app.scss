@@ -15,7 +15,7 @@
 
 body {
     font-family: 'Lato', sans-serif;
-    background-color: #f4f0e8;
+    background-color: #e9e3de;
     color: #333;
 }
 
@@ -147,22 +147,6 @@ footer {
         }
     }
 
-    /* Newsletter Section */
-    form {
-        display: flex;
-        margin-top: 1rem;
-
-        button {
-            background-color: #4A403A;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 0 4px 4px 0;
-            transition: background 0.3s ease-in-out;
-            &:hover {
-                background-color: #3A332E;
-            }
-        }
-    }
 
     /* Bottom Section */
     .footer-bottom {

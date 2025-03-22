@@ -45,3 +45,6 @@ php artisan migrate
 
 ## Contributing
 IMPORTANT: images and image descriptions (open source) were taken from ngo.gov
+
+Learning to implement a quiz api:
+https://www.youtube.com/watch?v=sDFR9aJkDSQ&list=PLa9jxxDE6i_2d0ENH4OjTYWP7ZavN1py3&index=2&ab_channel=LaraPhant
