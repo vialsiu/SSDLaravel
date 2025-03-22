@@ -33,9 +33,11 @@ class QuizController extends Controller
         return response()->json([
             'id' => $post->id,
             'question' => $questionTypes[$randomKey],
+            'choices' => $choices,
             'questionType' => $randomKey,
-            'choices' => $choices
-        ]);
+            'correct_answer' => $correctAnswer,
+            'image_path' => asset('images/' . $post->image_path),
+        ]);        
     }
 
     public function checkAnswer(Request $request)
