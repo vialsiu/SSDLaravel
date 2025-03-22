@@ -28,13 +28,16 @@
         </a>
         </div>
 
-        <!-- Card 3: What's On -->
+        <!-- Card 3: -->
         <div class="text-center">
-            <img src="{{ asset('images/piece3.jpg') }}" alt="What's On" class="w-full h-64 object-cover rounded-lg shadow-md">
+            <a href="{{ url('/quiz') }}">
+            <img src="{{ asset('images/piece3.jpg') }}" alt="Art Trivia Quiz" class="w-full h-64 object-cover rounded-lg shadow-md">
             <h3 class="text-xl font-medium text-gray-900 mt-4 relative pb-2 after:block after:w-10 after:border after:border-gray-300 after:mt-2 after:mx-auto">
-                What's on
+                Art Trivia Quiz
             </h3>
-            <p class="text-gray-600 mt-2 text-sm">Don't pass on the galleries</p>
+            <p class="text-gray-600 mt-2 text-sm">                Challenge your knowledge
+            </p>
+        </a>
         </div>
 
         <!-- Card 4: Membership -->
