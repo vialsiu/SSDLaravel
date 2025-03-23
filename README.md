@@ -1,36 +1,40 @@
-## 🎨 Paint Across the World — Laravel Tourism Art Blog
+# ৻ꪆ Paint Across the World — Laravel Tourism Art Blog
 
-**Author:** Sofia Fedane <br>
-
-
-## Requirements
-•	PHP 7.3 or higher <br>
-•	Node 12.13.0 or higher <br>
-•   PHP 8.x
-•   Composer
-•   MySQL (via XAMPP)
-•   Laravel 8 or higher
-
-
-## 📁 Project Setup Instructions
-
-Follow the steps below to get this Laravel project running on your local machine using **XAMPP** or any other local development environment.
+**Author:** Sofia Fedane  
 
 ---
 
-### 🧰 1. Clone or Download the Project
+## 𓂃۶ৎ Project Requirements
 
-Place the project folder inside your `htdocs` directory (for XAMPP):
+Ensure your environment meets these prerequisites:
+
+- ✅ PHP 8.x (minimum 7.3)
+- ✅ Composer
+- ✅ Node.js 12.13.0 or higher
+- ✅ MySQL (via XAMPP recommended)
+- ✅ Laravel 8 or higher
+
+---
+
+## 📂ᰔᩚ Installation & Setup Guide
+
+Follow these steps to set up **Paint Across the World** locally:
+
+### 1. 🚀ྀི  Clone or Download Project
+
+Clone the project into your XAMPP's `htdocs` folder:
 
 ```bash
-C:\xampp\htdocs\Paint-Across-The-World
+git clone <repository-url> C:\xampp\htdocs\Paint-Across-The-World
 ```
+
+Or download and extract the project manually.
 
 ---
 
-### 🧪 2. Install PHP Dependencies
+### 2. ⚙️ᥫ᭡. Install PHP Dependencies
 
-Open a terminal in the project root and run:
+Open your terminal within the project directory and run:
 
 ```bash
 composer install
@@ -38,9 +42,9 @@ composer install
 
 ---
 
-### 💡 3. Create and Configure the `.env` File
+### 3. 🔧ꨄ Configure `.env` File
 
-Duplicate `.env.example` and rename it to `.env`. Then configure your database credentials:
+Duplicate `.env.example` as `.env`, then configure the database:
 
 ```ini
 DB_CONNECTION=mysql
@@ -51,7 +55,7 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-Then generate the app key:
+Next, generate your application key:
 
 ```bash
 php artisan key:generate
@@ -59,16 +63,19 @@ php artisan key:generate
 
 ---
 
-### 🧱 4. Set Up the Database
+### 4. 📦𖦹 Set Up Database
 
-1. Open **phpMyAdmin**.
-2. Create a new database named: `paintings_blog`
+- Open **phpMyAdmin** and create a new database named:
+
+```
+paintings_blog
+```
 
 ---
 
-### 🧮 5. Run Migrations
+### 5. 📌ᯓ★ Run Database Migrations
 
-This will create all necessary tables:
+Create the necessary tables by running:
 
 ```bash
 php artisan migrate
@@ -76,50 +83,42 @@ php artisan migrate
 
 ---
 
-### 🌱 6. Seed the Database with Sample Data
+### 6. 🌱ᝰ.ᐟ Database Seeding
 
-To populate the `users` and `posts` tables (all artworks and users), run:
+Seed the database with posts and user data:
 
 ```bash
 php artisan db:seed
 ```
 
-**Advised**: to run the specific seeder:
+Or specifically seed only the posts:
 
 ```bash
 php artisan db:seed --class=PostsTableSeeder
 ```
-
-If you don't want to create your own user, you can use my seeder:
-```bash
-php artisan db:seed --class=PostsTableSeeder
-```
-
 
 ---
 
-### 🎨 7. Compile Frontend Assets
+### 7. 🎨ᯤ Compile Frontend Assets
 
-Install Node dependencies and compile CSS/JS:
+To install dependencies and compile assets (TailwindCSS & SCSS):
 
 ```bash
 npm install
 npm run dev
 ```
 
-If using TailwindCSS and SCSS, this step is essential for proper styling.
-
 ---
 
-### 🔗 8. Start the Local Development Server
+### 8. 🛠️-`♡´- Start Local Server
 
-Run:
+Launch the Laravel development server:
 
 ```bash
 php artisan serve
 ```
 
-Visit your browser at:
+Then open your browser:
 
 ```
 http://localhost:8000
@@ -127,8 +126,18 @@ http://localhost:8000
 
 ---
 
+## 🌐𐙚 Contributing & References
 
-## Contributing/References:
-For the Quiz API, I learned part of the implementation from  [this youtube playlist](https://www.youtube.com/watch?v=sDFR9aJkDSQ&list=PLa9jxxDE6i_2d0ENH4OjTYWP7ZavN1py3&index=2&ab_channel=LaraPhant) and put my own spin on it.
+### 🔖 Quiz API Implementation
 
-For the images and descriptions for the blogs, I used [this open source website](https://www.nga.gov/open-access-images.html)
+Learned and adapted similar to how it was implemented in this [YouTube Playlist by LaraPhant](https://www.youtube.com/watch?v=sDFR9aJkDSQ&list=PLa9jxxDE6i_2d0ENH4OjTYWP7ZavN1py3&index=2&ab_channel=LaraPhant).
+
+### 🖼️જ⁀➴ Images & Art Content
+
+- Historical artwork and descriptions sourced from the [National Gallery of Art Open Access](https://www.nga.gov/open-access-images.html).
+- Modern artwork sourced from [The Artling](https://theartling.com/en/).
+
+---
+
+Thank you for reading! ♡
+
