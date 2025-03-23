@@ -5,11 +5,12 @@
 ---
 
 ## ᐟજ⁀➴ Project Summary
-> **Showcasing Global Art:** Exploring famous artworks, artists, and artistic movements from around the world.
-> **Cultural Insights:** Highlighting how different cultures and time periods influence artistic expression.
-> **Interactive Trivia Quiz:** Engaging visitors through an interactive quiz to test and expand their knowledge of art history.
-> **Informative Blogging:** Providing regular blog posts covering various art topics, from historical masterpieces to modern art trends.
-> **Visually Rich Content:** Using high-quality imagery and intuitive design to inspire visitors and enhance user experience.
+- **Showcasing Global Art:** Exploring famous artworks, artists, and artistic movements from around the world.
+- **Cultural Insights:** Highlighting how different cultures and time periods influence artistic expression.
+- **Interactive Trivia Quiz:** Engaging visitors through an interactive quiz to test and expand their knowledge of art history.
+- **Informative Blogging:** Providing regular blog posts covering various art topics, from historical masterpieces to modern art trends.
+- **Visually Rich Content:**  
+  Using high-quality imagery and intuitive design to inspire visitors and enhance user experience.
 
 ## 𓂃۶ৎ Project Requirements
 
