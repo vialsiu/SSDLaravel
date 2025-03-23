@@ -1,4 +1,4 @@
-<di class="container mx-auto text-center py-16 px-6 lg:px-12">
+<div class=" w-4/5 container mx-auto text-center py-16 px-6 lg:px-12">
     
 
     <!-- Grid Section -->
