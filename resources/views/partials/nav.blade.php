@@ -1,23 +1,22 @@
-<nav class="bg-white py-3">
-    <div class="container mx-auto flex items-center justify-between max-w-6xl px-4 lg:px-8">
+<nav class="bg-white py-3 fixed top-0 left-1/2 transform -translate-x-1/2 w-[85%] max-w-6xl z-50 shadow-md border-b border-gray-300">
+    <div class="container mx-auto flex items-center justify-between px-4 lg:px-8">
         
-        <!-- Logo on the Left -->
-        <div class="flex items-center space-x-3 nav-logo">
-            <a href="{{ route('home') }}" class="flex items-center space-x-3">
-            <img src="{{ asset('/images/ship.png') }}" alt="Logo" class="h-7 w-auto">
-            <h1 class="text-gray-900 gradient-text">Viva il Painted Voyage</h1>
+        <!-- Logo (flex shrink) -->
+        <div class="flex items-center space-x-2 flex-shrink-0">
+            <a href="{{ route('home') }}" class="flex items-center space-x-2">
+                <img src="{{ asset('/images/ship.png') }}" alt="Logo" class="h-7 w-auto max-sm:h-5">
+                <h1 class="text-gray-900 gradient-text text-xl md:text-2xl lg:text-3xl whitespace-nowrap">Viva il Painted Voyage</h1>
             </a>
         </div>
 
-        <!-- Navigation Links -->
-        <ul class="flex space-x-6 text-lg font-medium">
-            <li><a href="{{ route('home') }}" class="text-gray-700 hover:text-black transition">Home</a></li>
+        <!-- Navigation Links (flex nowrap, shrinkable text) -->
+        <ul class="flex items-center space-x-4 md:space-x-6 lg:space-x-8 flex-nowrap whitespace-nowrap text-sm md:text-base lg:text-lg">
             <li><a href="{{ route('blog.index') }}" class="text-gray-700 hover:text-black transition">Blogs</a></li>
             <li><a href="{{ route('artist.index') }}" class="text-gray-700 hover:text-black transition">Artists</a></li>
             <li><a href="{{ url('/quiz') }}" class="text-gray-700 hover:text-black transition">Art Quiz</a></li>
             <li><a href="{{ route('galleries') }}" class="text-gray-700 hover:text-black transition">Galleries</a></li>
-            
-            <!-- Log in Button with Dynamic Authentication Check -->
+
+            <!-- Log in/out button -->
             @guest
                 <li><a href="{{ route('login') }}" class="text-gray-700 hover:text-black transition">Log in</a></li>
             @else
@@ -32,14 +31,5 @@
                 </li>
             @endguest
         </ul>
-
-        <!-- Search Icon -->
-        <div>
-            <a href="#" class="text-gray-700 hover:text-black transition">
-                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m1.8-5.4a7.5 7.5 0 11-15 0 7.5 7.5 0 0115 0z" />
-                </svg>
-            </a>
-        </div>
     </div>
 </nav>
