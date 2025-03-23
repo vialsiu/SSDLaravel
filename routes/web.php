@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\GalleryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,10 +31,7 @@ Route::post('/contact', [PagesController::class, 'submitContactForm'])->name('co
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
 //galleries
- Route::get('/galleries', function () {
-    return view('galleries');
-})->name('galleries');
-
+Route::get('/galleries', [GalleryController::class, 'index'])->name('galleries.index');
 
 //quiz
 Route::get('/quiz', function () {
