@@ -11,6 +11,6 @@
     </div>
 </div>
 <!-- Gallery Grid -->
-@include('partials.exploregalleries')
+@include('partials.exploregalleries', ['galleries' => $galleries])
 
 @endsection

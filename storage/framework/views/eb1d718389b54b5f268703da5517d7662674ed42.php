@@ -9,7 +9,7 @@
     </div>
 </div>
 <!-- Gallery Grid -->
-<?php echo $__env->make('partials.exploregalleries', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php echo $__env->make('partials.exploregalleries', ['galleries' => $galleries], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 <?php $__env->stopSection(); ?>
 

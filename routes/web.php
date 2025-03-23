@@ -31,7 +31,7 @@ Route::post('/contact', [PagesController::class, 'submitContactForm'])->name('co
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
 //galleries
-Route::get('/galleries', [GalleryController::class, 'index'])->name('galleries.index');
+Route::get('/galleries', [GalleryController::class, 'index'])->name('galleries');
 
 //quiz
 Route::get('/quiz', function () {
