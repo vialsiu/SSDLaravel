@@ -3,50 +3,51 @@
     <!-- Title -->
     <h2 class="text-3xl font-semibold text-gray-600 mb-8">EXPLORE, EMBRACE ART</h2>
 
-    <!-- Grid Section -->
+    <!-- Cards Grid (responsive: 4 columns desktop, 2 tablet, 1 mobile) -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         
-        <!-- Card 1:  -->
+        <!-- Card 1: Latest Blogs -->
         <div class="text-center">
             <a href="{{ url('/blog') }}">
-            <img src="{{ asset('images/piece1.jpg') }}" class="w-full h-64 object-cover rounded-lg shadow-md">
-            <h3 class="text-xl font-medium text-gray-900 mt-4 relative pb-2 after:block after:w-10 after:border after:border-gray-300 after:mt-2 after:mx-auto">
-                See latest blogs
-            </h3>
-            <p class="text-gray-600 mt-2 text-sm">Unlock your horizons to learn</p>
+                <img src="{{ asset('images/piece1.jpg') }}" class="w-full h-64 object-cover rounded-lg shadow-md">
+                <h3 class="text-xl font-medium text-gray-900 mt-4 relative pb-2 after:block after:w-10 after:border after:border-gray-300 after:mt-2 after:mx-auto">
+                    See latest blogs
+                </h3>
+                <p class="text-gray-600 mt-2 text-sm">Unlock your horizons to learn</p>
             </a>
         </div>
 
-        <!-- Card 2: Exhibitions -->
+        <!-- Card 2: Artists Page -->
         <div class="text-center">
             <a href="{{ url('/artists') }}">
-            <img src="{{ asset('images/piece2.jpg') }}" class="w-full h-64 object-cover rounded-lg shadow-md">
-            <h3 class="text-xl font-medium text-gray-900 mt-4 relative pb-2 after:block after:w-10 after:border after:border-gray-300 after:mt-2 after:mx-auto">
-                Artists
-            </h3>
-            <p class="text-gray-600 mt-2 text-sm">Do you have what it takes to be an artist?</p>
-        </a>
+                <img src="{{ asset('images/piece2.jpg') }}" class="w-full h-64 object-cover rounded-lg shadow-md">
+                <h3 class="text-xl font-medium text-gray-900 mt-4 relative pb-2 after:block after:w-10 after:border after:border-gray-300 after:mt-2 after:mx-auto">
+                    Artists
+                </h3>
+                <p class="text-gray-600 mt-2 text-sm">Do you have what it takes to be an artist?</p>
+            </a>
         </div>
 
-        <!-- Card 3: -->
+        <!-- Card 3: Art Trivia Quiz -->
         <div class="text-center">
             <a href="{{ url('/quiz') }}">
-            <img src="{{ asset('images/piece3.jpg') }}" alt="Art Trivia Quiz" class="w-full h-64 object-cover rounded-lg shadow-md">
-            <h3 class="text-xl font-medium text-gray-900 mt-4 relative pb-2 after:block after:w-10 after:border after:border-gray-300 after:mt-2 after:mx-auto">
-                Art Trivia Quiz
-            </h3>
-            <p class="text-gray-600 mt-2 text-sm">                Challenge your knowledge
-            </p>
-        </a>
+                <img src="{{ asset('images/piece3.jpg') }}" alt="Art Trivia Quiz" class="w-full h-64 object-cover rounded-lg shadow-md">
+                <h3 class="text-xl font-medium text-gray-900 mt-4 relative pb-2 after:block after:w-10 after:border after:border-gray-300 after:mt-2 after:mx-auto">
+                    Art Trivia Quiz
+                </h3>
+                <p class="text-gray-600 mt-2 text-sm">Challenge your knowledge</p>
+            </a>
         </div>
 
-        <!-- Card 4: Membership -->
+        <!-- Card 4: Galleries  -->
         <div class="text-center">
-            <img src="{{ asset('images/piece4.jpg') }}"class="w-full h-64 object-cover rounded-lg shadow-md">
+            <a href="{{ url('/galleries') }}">
+            <img src="{{ asset('images/piece4.jpg') }}" class="w-full h-64 object-cover rounded-lg shadow-md">
             <h3 class="text-xl font-medium text-gray-900 mt-4 relative pb-2 after:block after:w-10 after:border after:border-gray-300 after:mt-2 after:mx-auto">
-                Placeholder
+                Galleries
             </h3>
-            <p class="text-gray-600 mt-2 text-sm">Placeholder for now</p>
+            <p class="text-gray-600 mt-2 text-sm">Places you should definitely visit</p>
+        </a>
         </div>
 
     </div>
