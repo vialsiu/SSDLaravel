@@ -1,8 +1,15 @@
-# ৻ꪆ Paint Across the World — Laravel Tourism Art Blog
+# ৻ꪆ Paint Across the World — Laravel Art Blog
 
 **Author:** Sofia Fedane  
 
 ---
+
+## ᐟજ⁀➴ Project Summary
+> **Showcasing Global Art:** Exploring famous artworks, artists, and artistic movements from around the world.
+> **Cultural Insights:** Highlighting how different cultures and time periods influence artistic expression.
+> **Interactive Trivia Quiz:** Engaging visitors through an interactive quiz to test and expand their knowledge of art history.
+> **Informative Blogging:** Providing regular blog posts covering various art topics, from historical masterpieces to modern art trends.
+> **Visually Rich Content:** Using high-quality imagery and intuitive design to inspire visitors and enhance user experience.
 
 ## 𓂃۶ৎ Project Requirements
 
@@ -128,7 +135,7 @@ http://localhost:8000
 
 ## 🌐𐙚 Contributing & References
 
-### 🔖 Quiz API Implementation
+### 🔖જ⁀➴ Quiz API Implementation
 
 Learned and adapted similar to how it was implemented in this [YouTube Playlist by LaraPhant](https://www.youtube.com/watch?v=sDFR9aJkDSQ&list=PLa9jxxDE6i_2d0ENH4OjTYWP7ZavN1py3&index=2&ab_channel=LaraPhant).
 
